@@ -28,8 +28,9 @@ public class WorldInteraction : MonoBehaviour {
 
 	public void GetInteraction()
 	{
+		Camera camera = GetComponent<Camera> ();
+		//Vector3 interactionRay = camera.ViewportToWorldPoint (new Vector3(0.5f,0.5f, camera.nearClipPlane));
 		Ray interactionRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-		//Debug.DrawRay(interactionRay.origin, interactionRay.direction * 10, Color.yellow);
 		RaycastHit interactionInfo;
 
 		if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity))
