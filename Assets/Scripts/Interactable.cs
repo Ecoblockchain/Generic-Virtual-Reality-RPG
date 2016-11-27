@@ -8,10 +8,10 @@ public class Interactable : MonoBehaviour {
 
 	public virtual void MoveToInteraction(NavMeshAgent playerAgent)
 	{
-		hasInteracted = false;
-		this.playerAgent = playerAgent;
+		hasInteracted 				 = false;
+		this.playerAgent 			 = playerAgent;
 		playerAgent.stoppingDistance = 2f;
-		playerAgent.destination = this.transform.position;
+		playerAgent.destination 	 = this.transform.position;
 
 		//Interact ();
 	}
