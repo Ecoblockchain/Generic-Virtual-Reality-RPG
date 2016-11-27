@@ -5,6 +5,7 @@ public class WorldInteraction : MonoBehaviour {
 
 	NavMeshAgent playerAgent;
 	private Vector3 startingPosition;
+	public Vector3 point = new Vector3(0.5f,0.5f, Camera.main.nearClipPlane);
 
 
 	// Use this for initialization
@@ -28,11 +29,10 @@ public class WorldInteraction : MonoBehaviour {
 
 	public void GetInteraction()
 	{
-		Camera camera = GetComponent<Camera> ();
-		//Vector3 interactionRay = camera.ViewportToWorldPoint (new Vector3(0.5f,0.5f, camera.nearClipPlane));
-		Ray interactionRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		Ray interactionRay = Camera.main.ViewportPointToRay(point);
 		RaycastHit interactionInfo;
 
+		//if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity))
 		if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity))
 		{
 			GameObject interactedObject = interactionInfo.collider.gameObject;
