@@ -25,6 +25,7 @@ public class OpenTreasure : ActionItem, IGvrGazeResponder {
 	public void OnGazeTrigger ()
 	{
 		Debug.Log ("Attempt to open treasure!");
+		Interact ();
 	}
 
 	#endregion
