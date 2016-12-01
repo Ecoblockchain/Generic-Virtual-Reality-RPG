@@ -5,7 +5,6 @@ public class WorldInteraction : MonoBehaviour {
 
 	NavMeshAgent playerAgent;
 	private Vector3 startingPosition;
-	public Vector3 point = new Vector3(0.5f,0.5f, Camera.main.nearClipPlane);
 
 
 	// Use this for initialization
@@ -18,7 +17,7 @@ public class WorldInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		//if (SetGazedAt(true))
+		if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
 			GetInteraction ();	
 
 	}
@@ -29,7 +28,7 @@ public class WorldInteraction : MonoBehaviour {
 
 	public void GetInteraction()
 	{
-		Ray interactionRay = Camera.main.ViewportPointToRay(point);
+		Ray interactionRay = Camera.main.ViewportPointToRay(new Vector3(0.5f,0.5f, Camera.main.nearClipPlane));
 		RaycastHit interactionInfo;
 
 		//if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity))
@@ -42,6 +41,7 @@ public class WorldInteraction : MonoBehaviour {
 			} 
 			else 
 			{
+				//make player move around the world barring constraints by navmesh
 				playerAgent.stoppingDistance = 0.0f;
 				playerAgent.destination = interactionInfo.point;
 			}
