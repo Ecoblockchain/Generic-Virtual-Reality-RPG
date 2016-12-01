@@ -18,9 +18,10 @@ public class DialogueSystem : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		// Manage dialogue panel components via script
-		continueButton = dialoguePanel.transform.FindChild ("Continue").GetComponent<Button> ();
-		dialogueText = dialoguePanel.transform.FindChild ("Text").GetComponent<Text> ();
-		nameText = dialoguePanel.transform.FindChild ("Name").GetChild (0).GetComponent<Text>();
+		continueButton 	= dialoguePanel.transform.FindChild ("Continue").GetComponent<Button> ();
+		dialogueText 	= dialoguePanel.transform.FindChild ("Text").GetComponent<Text> ();
+		nameText 		= dialoguePanel.transform.FindChild ("Name").GetChild(0).GetComponent<Text>();
+
 		continueButton.onClick.AddListener (delegate {
 			ContinueDialogue();
 		});
@@ -50,8 +51,8 @@ public class DialogueSystem : MonoBehaviour {
 
 	public void CreateDialogue()
 	{
-		dialogueText.text = dialogueLines [dialogueIndex];
-		nameText.text = npcName;
+		dialogueText.text 	= dialogueLines [dialogueIndex];
+		nameText.text 		= npcName;
 		dialoguePanel.SetActive (true);
 	}
 	public void ContinueDialogue()
