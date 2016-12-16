@@ -6,7 +6,7 @@ public class OpenTreasure : ActionItem, IGvrGazeResponder {
 
 	public override void Interact()
 	{
-		DialogueSystem.Instance.AddNewDialogue (dialogue, "Tema Treasure");
+		DialogueSystem.Instance.AddNewDialogue (dialogue, "Golden Stool");
 		Debug.Log("Interacting with treasure (base ActionItem)");
 	}
 

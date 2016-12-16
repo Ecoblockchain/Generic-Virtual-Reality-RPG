@@ -3,14 +3,14 @@ using System.Collections;
 
 public class WorldInteraction : MonoBehaviour {
 
-	NavMeshAgent playerAgent;
+	UnityEngine.AI.NavMeshAgent playerAgent;
 	private Vector3 startingPosition;
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		playerAgent = GetComponent<NavMeshAgent>();
+		playerAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		startingPosition = transform.localPosition;
 	}
 	
