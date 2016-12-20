@@ -22,13 +22,13 @@ public class PlayerWeaponController : MonoBehaviour {
 		}
 
 
-		/*EquippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/" + itemToEquip.ObjectSlug), 
+		EquippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/" + itemToEquip.ObjectSlug), 
 			playerHand.transform.position, playerHand.transform.rotation);
 		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
 		equippedWeapon.Stats = itemToEquip.Stats;
 		EquippedWeapon.transform.SetParent(playerHand.transform);
 		characterStats.AddStatBonus(itemToEquip.Stats);
-		Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());*/
+		Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
 	}
 
 	/*void Update()
